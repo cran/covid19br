@@ -1,0 +1,8 @@
+bfde7a47e0d42c8e2013ea22b52a8354 *DESCRIPTION
+fc13df5ef15825757e711c56e6700590 *NAMESPACE
+e1400d0395eb122ad8aebc86a90833f3 *R/covid19br.R
+f8bbef3459e0d985a64489b58d942ae1 *R/downloadData.R
+a8e5c6d6dd5ab35dc9b57ae9d16a4a24 *man/covid19br.Rd
+dd082ee99201688580e06d53d084f2c7 *man/downloadCovid19.Rd
+5f40d15688e772aae8be57fc82bef12c *tests/testthat.R
+2d6cc0a76f72821d5cf2f0dcf30b5f52 *tests/testthat/test_covid19br.R
