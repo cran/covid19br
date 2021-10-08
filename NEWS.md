@@ -1,15 +1,17 @@
+# covid19br 0.1.1 
 
-# November 24 2020
+- Inclusion of an informative message in the downloadCovid19 function to notify the user when the data is temporarily unavailable.
 
----
+# covid19br 0.1.2
 
-## Version 0.1.1
+- Development of the package's webpage (https://fndemarqui.github.io/covid19br/)
 
-### Bug fix
+- Inclusion of 2 vignettes showing how to use the package.
 
-- Inclusion of an informative message in the downloadCovid19 function to notify 
-the user when the data is temporarily unavailable.
+- Implementation of add_epi_rates() function to add epidemiological rates (incidence, mortality and lethatity) to the downloaded data.
 
+- Implementation of add_geo() function to add georeferenced data to the downloaded COVID19 data.
 
----
+- Addition of georeferenced data for Brazil (at city, state and region levels) and world (at country level).
 
+- Lubridate package removed from the Imports field in the DESCRIPTION file.
