@@ -57,7 +57,6 @@ ggplot(deaths, aes(x = date, y=deaths, color = type)) +
 
 
 ## ---- message = FALSE, fig.dim=c(7, 5)----------------------------------------
-library(plotly)
 
 # downloading the data (region level):
 regions <- downloadCovid19("regions") 
@@ -94,7 +93,7 @@ capitals <- cities %>%
 capitals %>%
  kable(
     full_width = F,
-    caption = "Summary of the COVID-19 pandemic in the 27 capitals of brazilian states."
+    caption = "Summary of the COVID-19 pandemic in the 27 capitals of Brazilian states."
   )
 
 

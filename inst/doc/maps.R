@@ -34,6 +34,9 @@ mg <- cities_geo %>%
 ggplot(mg) +
   geom_sf(aes(fill = incidence)) 
 
+## ---- echo=FALSE, include=FALSE-----------------------------------------------
+rm(list = ls(all=TRUE))
+
 ## ---- message=FALSE, fig.dim = c(7, 5)----------------------------------------
 library(leaflet)
 
@@ -55,7 +58,8 @@ mymap <- states_geo %>%
   addPolygons(fillOpacity = 1, 
               weight = 1,
               smoothFactor = 0.2,
-              color = ~ reds(lethality),
+              color = "gray",
+              fillColor = ~ reds(lethality),
               popup = paste0(states_geo$state, ":  ",  states_geo$lethality, 2)
   ) %>%
   addLegend(position = "bottomright", 
@@ -64,11 +68,19 @@ mymap <- states_geo %>%
 mymap  
 
 
+## ---- echo=FALSE, include=FALSE-----------------------------------------------
+rm(list = ls(all=TRUE))
+
 ## ---- fig.dim = c(7, 5)-------------------------------------------------------
 library(sf)
 library(ggrepel)
 
 # getting the data:
+
+states_geo <- downloadCovid19("states") %>%
+  filter(date == max(date)) %>%
+  add_geo() 
+
 capitals <- downloadCovid19("cities") %>%
   filter(date == max(date), capital == TRUE) %>%
   add_geo() %>%
@@ -81,23 +93,26 @@ glimpse(capitals)
 
 # drawing some maps:
 incidence <- ggplot() +
-  geom_sf(data = ibgeStates, aes(geometry=geometry)) +
+  geom_sf(data = states_geo, aes(geometry=geometry)) +
   geom_point(data = capitals, aes(x=X, y=Y, size=incidence, alpha=incidence), color = "orange") +
   geom_text_repel( data=capitals, aes(x=X, y=Y, label=city), size=3)
 incidence
 
 mortality <- ggplot() +
-  geom_sf(data = ibgeStates, aes(geometry=geometry)) +
+  geom_sf(data = states_geo, aes(geometry=geometry)) +
   geom_point(data = capitals, aes(x=X, y=Y, size=mortality, alpha=mortality), color = "red") +
   geom_text_repel( data=capitals, aes(x=X, y=Y, label=city), size=3)
 mortality
 
 lethality <- ggplot() +
-  geom_sf(data = ibgeStates, aes(geometry=geometry)) +
+  geom_sf(data = states_geo, aes(geometry=geometry)) +
   geom_point(data = capitals, aes(x=X, y=Y, size=lethality, alpha=lethality), color = "darkred") +
   geom_text_repel( data=capitals, aes(x=X, y=Y, label=city), size=3)
 lethality
 
+
+## ---- echo=FALSE, include=FALSE-----------------------------------------------
+rm(list = ls(all=TRUE))
 
 ## ---- fig.dim = c(7, 5)-------------------------------------------------------
 world <- downloadCovid19("world") %>%

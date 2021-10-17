@@ -16,15 +16,15 @@ knitr::opts_chunk$set(
 
 # Introduction
 
-This vignette shows how to use the  R package __covid19br__ for downloading and exploring data from the COVID-19 pandemic in Brazil and the globe as well. The package downloads data bases from the following repositories:
+This vignette shows how to use the  R package __covid19br__ for downloading and exploring data from the COVID-19 pandemic in Brazil and the globe as well. The package downloads datasets from the following repositories:
 
-- The official brazilian repository provided by the brazilian government: [https://covid.saude.gov.br](https://covid.saude.gov.br); 
+- The official Brazilian repository provided by the Brazilian government: [https://covid.saude.gov.br](https://covid.saude.gov.br); 
 
 - The Johns Hopkins University's repository: [https://github.com/CSSEGISandData/COVID-19](https://github.com/CSSEGISandData/COVID-19) 
 
-The last repository has data on the COVID-19 pandemic in the global level (daily counts of confirmed cases, deaths and recovered patients by countries and territories), and has been widely used all over the world as a reliable source of data information on the COVID-19 pandemic. The former repository, on the other hand, possesses data on the Brazilian territory by city, state, region and national levels. 
+The last repository has data on the COVID-19 pandemic at the global level (daily counts of confirmed cases, deaths, and recovered patients by countries and territories), and has been widely used all over the world as a reliable source of data information on the COVID-19 pandemic. The former repository, on the other hand, possesses data on the Brazilian territory by city, state, region, and national levels. 
 
-We hope that this package may be helpful to other researchers and scientists to understand and fight this terrible epidemic that has been plaguing the world.
+We hope that this package may be helpful to other researchers and scientists to understand and fight this terrible pandemic that has been plaguing the world.
 
 
 # Getting started with R package covid19br
@@ -49,7 +49,7 @@ ggplot(brazil, aes(x = date, y = accumDeaths)) +
 
 ```
 
-Next, will show how to draw a plot with the daily count of new deaths along with its respective moving averarge. Here, we will use the `pracma::movavg()` function to compute the moving average.
+Next, will show how to draw a plot with the daily count of new deaths along with its respective moving averarge. Here, we will use the function `pracma::movavg()` to compute the moving average.
 
 ```{r, message = FALSE}
 library(pracma)
@@ -92,10 +92,9 @@ ggplot(deaths, aes(x = date, y=deaths, color = type)) +
 ```
 
 
-When dealing with epidemiological data we are often interested in computing quantities such as incidence, mortality and lethality rates. The function `covid19br::add_epi_rates()` can be used to add those rates to the downloaded data, is shown below:
+When dealing with epidemiological data we are often interested in computing quantities such as incidence, mortality and lethality rates. The function `covid19br::add_epi_rates()` can be used to add those rates to the downloaded data, as shown below:
 
 ```{r, message = FALSE, fig.dim=c(7, 5)}
-library(plotly)
 
 # downloading the data (region level):
 regions <- downloadCovid19("regions") 
@@ -121,7 +120,7 @@ p <- ggplot(regions, aes(x = date, y = mortality, color = region)) +
 ggplotly(p)
 ```
 
-In our last example, we will obtain a table summarizing the  for the 27 brazilian capitals in `r max(brazil$date)`.
+In our last example, we will obtain a table summarizing the  for the 27 Brazilian capitals in `r max(brazil$date)`.
 
 ```{r, message = FALSE}
 library(kableExtra)
@@ -138,7 +137,7 @@ capitals <- cities %>%
 capitals %>%
  kable(
     full_width = F,
-    caption = "Summary of the COVID-19 pandemic in the 27 capitals of brazilian states."
+    caption = "Summary of the COVID-19 pandemic in the 27 capitals of Brazilian states."
   )
 
 
