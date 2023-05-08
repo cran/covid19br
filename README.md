@@ -3,9 +3,6 @@
 
 # covid19br
 
-<!-- badges: start -->
-<!-- badges: end -->
-
 The goal of the package is to provide a function to automatically import
 the Brazilian COVID-19 pandemic data into R. Brazilian data is available
 on country, region, state, and city levels, and are downloaded from the

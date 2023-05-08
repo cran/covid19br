@@ -30,7 +30,9 @@
 
 # covid19br 0.1.4
 
-- The package now fails gracefully with an informative message if the resource is not available or has changed. 
+- Removing vignettes maps.Rmd and election2018.Rmd
 
-- Changing class of downloaded data to data.frame for compability with package dplyr. 
 
+# covid19br 0.1.5
+
+- Reinclusion of vignettes maps.Rmd and election2018.Rmd
