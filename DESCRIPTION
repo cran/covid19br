@@ -1,7 +1,7 @@
 Package: covid19br
 Type: Package
 Title: Brazilian COVID-19 Pandemic Data
-Version: 0.1.7
+Version: 0.1.8
 Authors@R: 
     c(person(given = "Fabio", 
       family = "Demarqui", 
@@ -26,12 +26,11 @@ Suggests: ggrepel, kableExtra, knitr, leaflet, pracma, plotly,
         rmarkdown, testthat, tidyverse
 LazyData: true
 RoxygenNote: 7.2.3
-VignetteBuilder: knitr
 NeedsCompilation: no
-Packaged: 2023-09-05 15:25:12 UTC; fndemarqui
+Packaged: 2023-10-15 17:58:58 UTC; fndemarqui
 Author: Fabio Demarqui [aut, cre, cph],
   Cristiano Santos [aut],
   Matheus Costa [ctb]
 Maintainer: Fabio Demarqui <fndemarqui@est.ufmg.br>
 Repository: CRAN
-Date/Publication: 2023-09-05 20:20:05 UTC
+Date/Publication: 2023-10-15 21:50:06 UTC
