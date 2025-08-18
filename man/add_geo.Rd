@@ -7,7 +7,7 @@
 \itemize{
     \item World map: \url{https://CRAN.R-project.org/package=rnaturalearthdata}
     \item Shapefiles for Brazilian maps: \url{https://www.ibge.gov.br/geociencias/downloads-geociencias.html}
-    \item Brazilian DHI data: \url{https://www.ipea.gov.br/ipeageo/bases.html}
+    \item Brazilian DHI data: \url{https://github.com/ipea/IpeaGeo}
   }
 }
 \usage{
@@ -73,7 +73,6 @@ regions <- downloadCovid19(level = "regions")
 regions_geo <- add_geo(regions)
 glimpse(regions_geo)
 }
-
 }
 \author{
 Fabio N. Demarqui \email{fndemarqui@est.ufmg.br}
